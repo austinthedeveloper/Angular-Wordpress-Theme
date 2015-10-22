@@ -7,3 +7,5 @@ functions.php.notLocal
 
 node_modules/*
 build/*
+*.css
+*.log
