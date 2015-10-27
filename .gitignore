@@ -7,5 +7,6 @@ functions.php.notLocal
 
 node_modules/*
 build/*
+.sass-cache/*
 *.css
 *.log
