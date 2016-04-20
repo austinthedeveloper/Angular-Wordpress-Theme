@@ -1,0 +1,22 @@
+body {
+	font-family: $primary;
+}
+
+.card {
+	width: 95%;
+	max-width: 500px;
+	margin: auto;
+	min-height: 300px;
+	margin-bottom: 15px;
+	border: 1px solid red;
+	.logo {
+		float: left;
+		max-width: 150px;
+		text-align: center;
+		padding: 15px;
+		background: blue;
+	}
+	.content {
+		padding: 15px;
+	}
+}
