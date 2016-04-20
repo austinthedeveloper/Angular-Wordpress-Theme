@@ -1,8 +1,14 @@
 var gulp = require('gulp');
+
+var clean = require('gulp-clean');
 var concat = require('gulp-concat');
 var minifyCss = require('gulp-minify-css');
 var sass = require('gulp-sass');
 var watch = require('gulp-watch');
+
+var bases = {
+ build: 'build/'
+};
 
 gulp.task('sass', function(){
 	gulp.src('assets/scss/styles.scss')
@@ -12,6 +18,11 @@ gulp.task('sass', function(){
 	
 });
 
+// Delete the dist directory
+gulp.task('clean', function() {
+ return gulp.src(bases.build)
+ .pipe(clean());
+});
 
 gulp.task('js', function(){
 	gulp.src('assets/js/*.js')
@@ -71,11 +82,20 @@ gulp.task('bootstrap-js', function(){
 	.pipe(gulp.dest('build/js'));
 });
 
+// Copy all other files to dist directly
+gulp.task('copy', function() {
+ // Copy html
+ gulp.src(['**/*.html'], {cwd: 'assets/html'})
+ .pipe(gulp.dest(bases.build + 'html'));
+
+});
+
 gulp.task('watch', function(){
-	gulp.watch('assets/scss/*.scss', ['sass']);
-	gulp.watch('assets/js/*.js', ['js']);
+	gulp.watch('assets/scss/**/*.scss', ['sass']);
+	gulp.watch('assets/js/**/*.js', ['js']);
+	gulp.watch('assets/html/**/*.html', ['copy']);
 })
 
 
-gulp.task('init', ['sass', 'js', 'angular', 'bootstrap-js']);
+gulp.task('init', ['copy', 'sass', 'js', 'angular', 'bootstrap-js', 'watch']);
 gulp.task('default', ['sass','js']);

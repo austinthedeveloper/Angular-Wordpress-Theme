@@ -1,4 +1,5 @@
 wpAng = typeof wpAng === 'undefined' ? {} : wpAng;
+var buildUrl = 'wp-content/themes/Angular-Wordpress-Theme/build/';
 
 wpAng.init = function(){
 	
@@ -193,6 +194,13 @@ wpAng.init = function(){
 		}
 		
 	}])
+
+	.component('component', {
+		templateUrl: buildUrl + 'html/component.html',
+		controller: function() {
+			var vm = this;
+		}
+	})
 	
 };
 
