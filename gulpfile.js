@@ -25,7 +25,7 @@ gulp.task('clean', function() {
 });
 
 gulp.task('js', function(){
-	gulp.src('assets/js/*.js')
+	gulp.src('assets/js/**/*.js')
 		.pipe(concat('scripts.js'))
 		.pipe(gulp.dest('build/js'));
 });
@@ -38,6 +38,7 @@ gulp.task('angular', function(){
 		'node_modules/angular-animate/angular-animate.min.js',
 		'node_modules/angular-ui-router/release/angular-ui-router.min.js',
 		'node_modules/angular-ui-tinymce/src/tinymce.js',
+		'node_modules/underscore/underscore.js',
 	])
 	.pipe(concat('angular.min.js'))
 	.pipe(gulp.dest('build/js'));

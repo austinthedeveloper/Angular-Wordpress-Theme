@@ -1,0 +1,21 @@
+{
+  "name": "angularjs-wordpress-theme",
+  "description": "angularjs wordpress theme",
+  "main": "index.js",
+  "authors": [
+    "Roy Sivan"
+  ],
+  "license": "GPLV3",
+  "keywords": [
+    "wordpress",
+    "angularjs"
+  ],
+  "homepage": "https://github.com/austinthedeveloper/Angular-Wordpress-Theme",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
