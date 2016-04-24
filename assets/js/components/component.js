@@ -1,10 +1,10 @@
 angular.module('wpAngularTheme')
 .component('component', {
 	templateUrl: buildUrl + 'html/component.html',
-	controller: ['_', 'githubService', 'stackService', '$q', function(_, githubService, stackService, $q) {
+	controller: [function() {
 			var vm = this;
 	
-			vm.listClass = function(item) {
+			/*vm.listClass = function(item) {
 		      return 'fa-' + item;
 		    };
 		    
@@ -13,6 +13,6 @@ angular.module('wpAngularTheme')
 		      vm.data = _.flatten(res);
 		    }, function(err) {
 		      console.log('error', err);
-		    });
+		    });*/
 		}]
 })

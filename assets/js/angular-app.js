@@ -3,7 +3,7 @@ var buildUrl = 'wp-content/themes/Angular-Wordpress-Theme/build/';
 
 wpAng.init = function(){
 	
-	wpAng.app = angular.module('wpAngularTheme',['ui.router', 'ui.bootstrap', 'ngAnimate', 'ngResource','ui.tinymce', 'underscore', 'github', 'stackOverflow'])
+	wpAng.app = angular.module('wpAngularTheme',['ui.router', 'ngMaterial', 'ngAnimate', 'ngResource','ui.tinymce', 'underscore', 'github', 'stackOverflow'])
 	
 	//FILTERS
 	.filter('to_trusted',['$sce',function($sce){
