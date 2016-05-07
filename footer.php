@@ -1,7 +1,6 @@
-		</div><!-- END CONTAINER -->  
-		</div><!-- END FLUID CONTAINER -->	
+		</div><!-- END CONTENT --> 
 		
-		<footer class="container-fluid">
+		<!-- <footer class="container-fluid">
 			<div class="container">
 				<div class="row-fluid">
 					<div class="span5">
@@ -12,7 +11,7 @@
 					</div>
 				</div>
 			</div>
-		</footer>  
+		</footer>   -->
     <!-- WP FOOTER -->
   	<?php wp_footer(); ?>
 	    

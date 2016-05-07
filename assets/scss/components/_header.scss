@@ -1,0 +1,15 @@
+.header {
+	background: $primaryColor;
+	width: 100%;
+	max-width: 300px;	
+	color: $white;
+	text-align: center;
+	padding-top: 40px;
+	h1, h2 {
+		text-transform: uppercase;
+		margin: 0 auto;
+	}
+	h1 {
+		font-weight: bold;
+	}
+}

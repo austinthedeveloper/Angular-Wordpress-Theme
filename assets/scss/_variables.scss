@@ -1,1 +1,26 @@
 $primary: 'Source Sans Pro', sans-serif;
+$base-weight: 300;
+
+// Colors
+$primaryColor: #b12527;
+$ilfusion: #EF4127;
+$drn: #364B58;
+$white: #ffffff;
+$black: #000000;
+$grey: #CCCCCC;
+
+$base-border: 1px solid $grey;
+
+$base-transition: .2s all ease-in-out;
+
+.ilfusion-bg {
+	background: $ilfusion;
+}
+
+.drn-bg {
+	background: $drn; 
+}
+
+.70kft-bg {
+	background: black;
+}

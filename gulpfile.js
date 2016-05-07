@@ -85,12 +85,17 @@ gulp.task('copy', function() {
  gulp.src(['**/*.html'], {cwd: 'assets/html'})
  .pipe(gulp.dest(bases.build + 'html'));
 
+ // Copy images
+ gulp.src(['**/*'], {cwd: 'assets/images'})
+ .pipe(gulp.dest(bases.build + 'images'));
+
 });
 
 gulp.task('watch', function(){
 	gulp.watch('assets/scss/**/*.scss', ['sass']);
 	gulp.watch('assets/js/**/*.js', ['js']);
 	gulp.watch('assets/html/**/*.html', ['copy']);
+	gulp.watch('assets/images/**/*', ['copy']);
 })
 
 

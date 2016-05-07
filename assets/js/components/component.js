@@ -3,6 +3,8 @@ angular.module('wpAngularTheme')
 	templateUrl: buildUrl + 'html/component.html',
 	controller: [function() {
 			var vm = this;
+
+			vm.url = buildUrl;
 	
 			/*vm.listClass = function(item) {
 		      return 'fa-' + item;
