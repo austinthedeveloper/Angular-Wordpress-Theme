@@ -18,4 +18,4 @@
 <body layout="row" <?php body_class(); ?>>
 <header-menu layout="column" div-hover></header-menu>
 
-<md-content class="main-content md-whiteframe-1dp" layout-padding flex>
+<md-content class="content-container" layout-padding flex>

@@ -1,0 +1,25 @@
+.content-container {}
+
+.main-content {
+	width: 95%;
+	max-width: 700px;
+	margin: auto;
+	font-size: 20px;
+	line-height: 1.8;
+	a {
+		text-decoration: none;
+		color: $primaryColor; 
+		font-weight: bold;
+		&:visited, &:focus {
+			color: darken($primaryColor, 20%);
+		}
+		&:hover {
+			color: lighten($primaryColor, 20%);
+		}
+	}
+	.page-title {
+		font-weight: bold;
+		font-size: 2em;
+		margin: .3em 0 .15em;
+	}
+}

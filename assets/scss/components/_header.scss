@@ -1,5 +1,6 @@
 header-menu {
 	background: $primaryColor;
+	@include gradient($primaryColor, darken($primaryColor, 10%), vertical);
 	width: 100%;
 	max-width: 300px;	
 	color: $white;
@@ -34,21 +35,22 @@ header-menu {
 				background: lighten($primaryColor, 5%);
 			}
 		}
+	}	
+}
+
+.menu-social {
+	a {
+		display: inline-block;
+		padding: 10px;
+		@include transition($base-transition);
+		&:hover {
+			background: lighten($primaryColor, 5%);
+		}
 	}
-	.menu-social {
-		a {
-			display: inline-block;
-			padding: 10px;
-			@include transition($base-transition);
-			&:hover {
-				background: lighten($primaryColor, 5%);
-			}
-		}
-		md-icon {
-			$icon-size: 40px;
-			font-size: $icon-size;
-			height: $icon-size;
-			color: $white;
-		}
+	md-icon {
+		$icon-size: 40px;
+		font-size: $icon-size;
+		height: $icon-size;
+		color: $white;
 	}
 }
