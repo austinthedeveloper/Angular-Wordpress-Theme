@@ -1,5 +1,9 @@
 wpAng = typeof wpAng === 'undefined' ? {} : wpAng;
-var buildUrl = 'wp-content/themes/Angular-Wordpress-Theme/build/';
+var directory = ajaxInfo.template_directory;
+var buildUrl = directory + 'build/';
+var views = directory + 'assets/views/';
+var templates = directory + 'assets/templates/';
+var components = directory + 'assets/js/components/';
 
 wpAng.init = function(){
 	
@@ -14,7 +18,7 @@ wpAng.init = function(){
 	
 	//RUNFUNC
 	.run(function($rootScope){	
-		$rootScope.dir = ajaxInfo.template_directory;
+		$rootScope.dir = directory;
 		$rootScope.tinymceOptions = {
 			skin:'lightgray',
 			height:300
@@ -30,12 +34,12 @@ wpAng.init = function(){
 			.state('list',{
 				url:'/',
 				controller:'listView',
-				templateUrl:ajaxInfo.template_directory+'list.html'
+				templateUrl:views +'list.html'
 			})
 			.state('single',{
 				url:'/post/:slug',
 				controller:'singleView',
-				templateUrl:ajaxInfo.template_directory+'single.html'
+				templateUrl: views +'single.html'
 			})
 	})
 	

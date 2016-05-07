@@ -1,4 +1,4 @@
-		</div><!-- END CONTENT --> 
+		</md-content><!-- END md-content --> 
 		
 		<!-- <footer class="container-fluid">
 			<div class="container">

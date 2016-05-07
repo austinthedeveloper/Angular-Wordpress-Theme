@@ -17,5 +17,5 @@
 }
 
 .div-hover {
-	transition: $base-transition;
+	@include transition($base-transition);
 }
