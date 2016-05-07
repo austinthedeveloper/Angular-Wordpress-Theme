@@ -1,6 +1,6 @@
 header-menu {
 	background: $primaryColor;
-	@include gradient($primaryColor, darken($primaryColor, 10%), vertical);
+	@include gradient(darken($primaryColor, 5%), $primaryColor, vertical);
 	width: 100%;
 	max-width: 300px;	
 	color: $white;

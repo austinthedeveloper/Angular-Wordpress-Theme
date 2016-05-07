@@ -8,7 +8,7 @@
 	line-height: 1.8;
 	a {
 		text-decoration: none;
-		color: $primaryColor; 
+		color: $primaryColor;
 		font-weight: bold;
 		&:visited, &:focus {
 			color: darken($primaryColor, 20%);
@@ -22,4 +22,22 @@
 		font-size: 2em;
 		margin: .3em 0 .15em;
 	}
+	article {
+		border-bottom: $base-border;
+		padding: 15px 10px;
+		&:last-child {
+			border-bottom: none;
+		}
+		&.exerpt {
+			cursor: pointer;
+			@include transition($base-transition);
+			&:hover {
+				background: darken($white, 3%);
+			}
+		}
+	}
+}
+
+.read-more {
+
 }

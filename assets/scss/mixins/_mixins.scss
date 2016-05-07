@@ -92,3 +92,8 @@
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$start-color', endColorstr='$end-color',GradientType=1 );
 		}
  }
+
+ @mixin selection {
+    ::-moz-selection { @content; }
+    ::selection { @content; }
+}
