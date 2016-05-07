@@ -8,13 +8,11 @@ angular.module('wpAngularTheme')
 		})
 		.state('list',{
 			url:'/list',
-			controller:'listView',
-			templateUrl:views +'list.html'
+			template: '<list></list>'
 		})
 		.state('single',{
 			url:'/post/:slug',
-			controller:'singleView',
-			templateUrl: views +'single.html'
+			template: '<single></single>'
 		})
 		.state('resume',{
 			url:'/resume',
