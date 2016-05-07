@@ -1,4 +1,5 @@
 <?php get_header(); ?>
-<component></component>
-<!-- <div ui-view></div>	 -->
+<div ui-view></div>	
+<!-- <card></card> -->
+
 <?php get_footer(); ?>
