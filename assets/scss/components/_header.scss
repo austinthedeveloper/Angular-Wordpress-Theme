@@ -1,0 +1,56 @@
+header-menu {
+	background: $primaryColor;
+	@include gradient($primaryColor, darken($primaryColor, 10%), vertical);
+	width: 100%;
+	max-width: 300px;	
+	color: $white;
+	padding-top: 40px;
+	.header-title {
+		text-align: center;
+		padding-bottom: 30px;
+	}
+	h1, h2 {
+		text-transform: uppercase;
+		margin: 0 auto;
+	}
+	h1 {
+		font-weight: bold;
+	}
+	md-content {
+		background: transparent;
+	}
+	ul.menu {
+		padding: 0;
+		li {
+			list-style: none;
+		}
+		a {
+			color: $white;
+			display: block;
+			font-size: 18px;
+			padding: 10px 15px;
+			text-decoration: none;
+			@include transition($base-transition);
+			&:hover {
+				background: lighten($primaryColor, 5%);
+			}
+		}
+	}	
+}
+
+.menu-social {
+	a {
+		display: inline-block;
+		padding: 10px;
+		@include transition($base-transition);
+		&:hover {
+			background: lighten($primaryColor, 5%);
+		}
+	}
+	md-icon {
+		$icon-size: 40px;
+		font-size: $icon-size;
+		height: $icon-size;
+		color: $white;
+	}
+}

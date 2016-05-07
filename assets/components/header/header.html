@@ -1,0 +1,19 @@
+<div class="header-title" flex="none">
+	<h1>Austin Stewart</h1>
+	<h2>Web Developer</h2>
+</div>
+<md-content flex>
+   <ul class="menu">
+	   <li ng-repeat="(key, val) in $ctrl.menu">
+		   <a ui-sref="{{val}}">{{key}}</a>
+	   </li>
+   </ul>
+</md-content>
+<div class="menu-social" flex="none" layout="row" layout-align="space-around end">
+	<a class="social-icon" ng-repeat="(key, val) in $ctrl.social" ng-href="{{val.link}}">
+		<md-icon md-font-icon="{{val.icon}}" class="fa" ></md-icon> 
+		<md-tooltip md-direction="top">
+          {{key}}
+        </md-tooltip>
+	</a>
+</div> 

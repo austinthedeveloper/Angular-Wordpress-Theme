@@ -1,0 +1,12 @@
+pre {
+	width: 92%;
+    overflow: auto;
+    margin: 2rem 0;
+    padding: 21px 14px 21px 20px;
+    color: #3f3b36;
+    border: 1px solid $primaryColor;
+    border-left: 10px solid $primaryColor;
+    font: lighter 12px/20px Monaco,'MonacoRegular',monospace;
+    background: url(../images/pre.png) repeat 0 0;
+    background-size: 1px 40px;
+}

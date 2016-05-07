@@ -1,2 +1,14 @@
-@import "bootstrap-angularTheme";
-@import "more-style";
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,600,300italic);
+
+@import "variables";
+@import "../../node_modules/angular-material/angular-material.css";
+@import "core";
+// @import "bootstrap-angularTheme";
+// @import "../../node_modules/angular-ui-bootstrap/dist/ui-bootstrap-csp.css";
+
+@import "mixins/mixins";
+
+@import "components/pre";
+@import "components/card";
+@import "components/header";
+@import "components/content";

@@ -1,0 +1,21 @@
+.card {
+	width: 95%;
+	max-width: 600px;
+	margin: auto;
+	min-height: 300px;
+	margin-bottom: 15px;
+	// border: $base-border;
+	.logo {
+		float: left;
+		max-width: 150px;
+		text-align: center;
+		padding: 15px;
+	}
+	.content {
+		padding: 15px;
+	}
+}
+
+.div-hover {
+	@include transition($base-transition);
+}

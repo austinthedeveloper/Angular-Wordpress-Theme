@@ -1,0 +1,5 @@
+<article>
+    <h1 class="page-title">{{$ctrl.post.post_title}}</h1>
+
+	<md-content ng-bind-html="$ctrl.post.post_content | to_trusted"></md-content>
+</article>
