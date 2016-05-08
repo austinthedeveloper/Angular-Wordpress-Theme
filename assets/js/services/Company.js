@@ -1,7 +1,7 @@
 angular.module('wpAngularTheme')
-.service('Page',['$http', '$q', function($http, $q, $state){
+.service('Company',['$http', '$q', function($http, $q, $state){
 	var vm = this;
-	var url = ajaxInfo.api_url + 'pages/';
+	var url = ajaxInfo.api_url + 'company/';
 
 	vm.get = function(id) {
 		var defer = $q.defer();

@@ -1,8 +1,9 @@
+$card-height: 300px;
 .card {
 	width: 95%;
 	max-width: 600px;
 	margin: auto;
-	min-height: 300px;
+	min-height: $card-height;
 	margin-bottom: 15px;
 	// border: $base-border;
 	.logo {
@@ -13,6 +14,9 @@
 	}
 	.content {
 		padding: 15px;
+	}
+	.card-content {
+		max-height: 450px;
 	}
 }
 

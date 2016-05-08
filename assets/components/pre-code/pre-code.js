@@ -8,7 +8,5 @@ angular.module('wpAngularTheme')
 		var vm = this;
 
 		vm.isAdmin = ajaxInfo.is_admin;
-
-		console.log("ADMIN: ", vm.isAdmin);
 	}]
 })

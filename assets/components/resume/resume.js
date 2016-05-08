@@ -1,7 +1,7 @@
 angular.module('wpAngularTheme')
 .component('resume', {
 	templateUrl: components + 'resume/resume.html',
-	controller: ['Page', function(Page) {
+	controller: ['Page', 'Company', function(Page, Company) {
 		var vm = this;
 
 		Page.get(9)
@@ -9,6 +9,13 @@ angular.module('wpAngularTheme')
 			vm.data = res;
 		}, function(err) {
 			console.log(err);
-		})
+		});
+
+		Company.get()
+		.then(function(res) {
+			vm.companies = res;
+		}, function(err) {
+			console.log(err);
+		});
 	}]
 })
