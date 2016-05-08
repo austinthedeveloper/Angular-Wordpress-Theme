@@ -5,7 +5,7 @@
 <md-content flex>
    <ul class="menu">
 	   <li ng-repeat="(key, val) in $ctrl.menu">
-		   <a ui-sref="{{::val}}">{{::key}}</a>
+		   <a ui-sref="{{::val}}" ui-sref-active>{{::key}}</a>
 	   </li>
    </ul>
 </md-content>

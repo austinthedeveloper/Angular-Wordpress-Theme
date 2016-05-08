@@ -31,7 +31,7 @@ header-menu {
 			padding: 10px 15px;
 			text-decoration: none;
 			@include transition($base-transition);
-			&:hover {
+			&:hover, &.active {
 				background: lighten($primaryColor, 5%);
 			}
 		}
