@@ -1,13 +1,16 @@
 <md-card class="card" layout="row" div-hover>
-	<div class="logo ilfusion-bg">
+	<div class="logo ilfusion-bg" ng-style="{'background-color': $ctrl.data.acf.color}">
 		<img ng-src="{{$ctrl.url}}images/ilfusion-logo.png" alt="{{$ctrl.data.title.rendered}}">
 	</div>
 	<div flex layout="column" class="card-content">
-		<md-card-title flex="none">
+		<md-card-title flex="none" class="card-title md-whiteframe-1dp">
           <md-card-title-text>
-            <span class="md-headline">{{$ctrl.data.title.rendered}}</span>
+            <span class="md-headline">{{$ctrl.data.acf.alternate_company_name || $ctrl.data.title.rendered}}</span>
+            <div class="card-position">{{$ctrl.data.acf.position}}</div>
+            <div class="card-date">{{$ctrl.data.acf.start_date}} - {{$ctrl.data.acf.end_date || 'Present'}}</div>
           </md-card-title-text>
         </md-card-title>
-        <md-content flex ng-bind-html="$ctrl.data.content.rendered | to_trusted"></md-content>
+
+        <md-content flex ng-bind-html="$ctrl.data.content.rendered"></md-content>
 	</div>
 </md-card>

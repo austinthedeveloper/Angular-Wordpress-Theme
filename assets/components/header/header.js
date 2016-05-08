@@ -6,7 +6,7 @@ angular.module('wpAngularTheme')
 
 		vm.menu = {
 			"Home": "main",
-			"About": "about",
+			/*"About": "about",*/
 			"Awards": "awards",
 			"Resume": "resume",
 			"Blog": "list",			
@@ -16,19 +16,19 @@ angular.module('wpAngularTheme')
 
 		vm.social = {
 			"LinkedIn": {
-				link: "#",
+				link: "https://www.linkedin.com/in/austinstewart",
 				icon: "fa-linkedin-square"
 			},
 			"Email": {
-				link: "#",
+				link: "mailto:hello@austinthedeveloper.com",
 				icon: "fa-envelope"
 			},
 			"GitHub": {
-				link: "#",
+				link: "https://github.com/austinthedeveloper/",
 				icon: "fa-github-square"
 			},
 			"Stack Overflow": {
-				link: "#",
+				link: "http://stackoverflow.com/users/2404112/austinthedeveloper",
 				icon: "fa-stack-overflow"
 			},
 		}

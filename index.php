@@ -1,5 +1,7 @@
 <?php get_header(); ?>
+	<processing></processing>
+
 	<div class="main-content" ui-view>
 
-	</div>	
+	</div>
 <?php get_footer(); ?>

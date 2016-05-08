@@ -1,11 +1,13 @@
 angular.module('wpAngularTheme')
 .component('list', {
 	templateUrl: components + 'list/list.html',
-	controller: ['$rootScope', 'Posts',function($rootScope, Posts){
+	controller: ['$rootScope', 'Posts', 'Processing', function($rootScope, Posts, Processing){
 		var vm = this;
 
 		vm.refreshPosts = function(){
+			Processing.on();
 			Posts.query(function(res){
+				Processing.off();
 				vm.posts = res;
 			});
 		};

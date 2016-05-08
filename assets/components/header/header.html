@@ -10,7 +10,7 @@
    </ul>
 </md-content>
 <div class="menu-social" flex="none" layout="row" layout-align="space-around end">
-	<a class="social-icon" ng-repeat="(key, val) in $ctrl.social" ng-href="{{::val.link}}">
+	<a class="social-icon" ng-repeat="(key, val) in $ctrl.social" ng-href="{{::val.link}}" target="_new">
 		<md-icon md-font-icon="{{::val.icon}}" class="fa" ></md-icon> 
 		<md-tooltip md-direction="top">
           {{::key}}
