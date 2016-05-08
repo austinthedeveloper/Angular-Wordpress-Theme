@@ -1,1 +1,7 @@
-<pre>{{$ctrl.data | json}}</pre>
+<article>
+    <h1 class="page-title">{{$ctrl.post.title.rendered}}</h1>
+
+	<md-content ng-bind-html="$ctrl.post.content.rendered | to_trusted"></md-content>
+</article>
+
+<pre>{{$ctrl.post | json}}</pre>

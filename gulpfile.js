@@ -35,6 +35,7 @@ gulp.task('angular', function(){
 		'node_modules/tinymce/tinymce.min.js',
 		'node_modules/angular/angular.min.js',
 		'node_modules/angular-resource/angular-resource.min.js',
+		'node_modules/angular-sanitize/angular-sanitize.min.js',
 		'node_modules/angular-animate/angular-animate.min.js',
 		'node_modules/angular-aria/angular-aria.min.js',
 		'node_modules/angular-messages/angular-messages.min.js',

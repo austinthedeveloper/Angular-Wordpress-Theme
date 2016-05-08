@@ -1,3 +1,12 @@
+code {
+    background: lighten($primaryColor, 20%);
+    color: $white;
+    font: lighter Monaco,'MonacoRegular',monospace;
+    padding: 0 4px;
+}
+
+$preFont: lighter 12px/20px Monaco,'MonacoRegular',monospace;
+
 pre {
 	width: 92%;
     overflow: auto;
@@ -6,7 +15,13 @@ pre {
     color: #3f3b36;
     border: 1px solid $primaryColor;
     border-left: 10px solid $primaryColor;
-    font: lighter 12px/20px Monaco,'MonacoRegular',monospace;
+    font: $preFont;
     background: url(../images/pre.png) repeat 0 0;
     background-size: 1px 40px;
+    code {
+        font: $preFont;
+        background: transparent;
+        color: #3f3b36;
+    }
 }
+
