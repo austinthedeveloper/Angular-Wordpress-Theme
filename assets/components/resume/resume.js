@@ -1,21 +1,19 @@
 angular.module('wpAngularTheme')
 .component('resume', {
 	templateUrl: components + 'resume/resume.html',
-	controller: ['Page', 'Company', function(Page, Company) {
+	controller: ['Page', 'Company', 'Processing', function(Page, Company, Processing) {
 		var vm = this;
 
-		Page.get(9)
-		.then(function(res) {
-			vm.data = res;
-		}, function(err) {
-			console.log(err);
-		});
+		Processing.on();
 
 		Company.get()
 		.then(function(res) {
 			vm.companies = res;
 		}, function(err) {
 			console.log(err);
+		})
+		.then(function() {
+			Processing.off();
 		});
 	}]
 })

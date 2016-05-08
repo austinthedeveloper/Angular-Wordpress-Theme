@@ -1,13 +1,27 @@
 <md-card class="card" layout="row" div-hover ng-if="$ctrl.data">
-	<div class="logo ilfusion-bg" ng-style="{'background-color': $ctrl.data.acf.color}">
-		<img ng-src="{{$ctrl.data.better_featured_image.source_url}}" alt="{{$ctrl.data.title.rendered}}">
+	<div class="logo" ng-style="{'background-color': $ctrl.data.acf.color}" layout="column">
+		<a ng-href="{{$ctrl.data.acf.site || '#'}}" ng-if="$ctrl.data.better_featured_image">
+      <img ng-src="{{$ctrl.data.better_featured_image.source_url}}" alt="{{$ctrl.data.title.rendered}}">
+    </a>
+    <span flex></span>
+    <div class="card-actions" layout="row">
+      <a class="social-icon" target="_new" ng-href="{{$ctrl.data.acf.site || '#'}}" ng-if="$ctrl.data.acf.site">
+        <md-icon md-font-icon="fa-mail-forward" class="fa" ></md-icon> 
+        <md-tooltip md-direction="top">
+          View Site
+        </md-tooltip>
+      </a>
+    </div>
 	</div>
 	<div flex layout="column" class="card-content">
 		<md-card-title flex="none" class="card-title md-whiteframe-1dp">
           <md-card-title-text>
             <span class="md-headline">{{$ctrl.data.acf.alternate_company_name || $ctrl.data.title.rendered}}</span>
-            <div class="card-position">{{$ctrl.data.acf.position}}</div>
-            <div class="card-date">{{$ctrl.data.acf.start_date}} - {{$ctrl.data.acf.end_date || 'Present'}}</div>
+            <div class="card-meta">
+              <div class="card-location">{{$ctrl.data.acf.location}}</div>
+              <div class="card-position">{{$ctrl.data.acf.position}}</div>
+              <div class="card-date">{{$ctrl.data.acf.start_date}} - {{$ctrl.data.acf.end_date || 'Present'}}</div>
+            </div>
           </md-card-title-text>
         </md-card-title>
 

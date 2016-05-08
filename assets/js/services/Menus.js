@@ -1,7 +1,8 @@
 angular.module('wpAngularTheme')
-.service('Page',['$http', '$q', function($http, $q){
+.service('Menus',['$http', '$q', function($http, $q){
 	var vm = this;
-	var url = ajaxInfo.api_url + 'pages/';
+	var url = ajaxInfo.menu_api_url + 'menus/';
+	// Angular Menu is ID: 19
 
 	vm.get = function(id) {
 		var defer = $q.defer();

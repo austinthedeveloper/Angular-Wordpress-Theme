@@ -1,9 +1,12 @@
-.content-container {}
+.content-container {
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
 
 .main-content {
 	width: 95%;
 	max-width: 700px;
-	margin: auto;
+	margin: auto;	
 	padding-bottom: 25px;
 	font-size: 20px;
 	line-height: 1.8;
@@ -37,6 +40,10 @@
 			}
 		}
 	}
+}
+
+.link-icon {
+	display: inline-block;
 }
 
 .read-more {
