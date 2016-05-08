@@ -5,10 +5,13 @@ $card-height: 300px;
 	min-height: $card-height;
 	// border: $base-border;
 	.logo {
-		float: left;
-		max-width: 150px;
+		width: 150px;
 		text-align: center;
 		padding: 15px;
+		img {
+			width: auto;
+			margin: auto;
+		}
 	}
 	.content {
 		padding: 15px;

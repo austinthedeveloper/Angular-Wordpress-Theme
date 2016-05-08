@@ -1,6 +1,6 @@
-<md-card class="card" layout="row" div-hover>
+<md-card class="card" layout="row" div-hover ng-if="$ctrl.data">
 	<div class="logo ilfusion-bg" ng-style="{'background-color': $ctrl.data.acf.color}">
-		<img ng-src="{{$ctrl.url}}images/ilfusion-logo.png" alt="{{$ctrl.data.title.rendered}}">
+		<img ng-src="{{$ctrl.data.better_featured_image.source_url}}" alt="{{$ctrl.data.title.rendered}}">
 	</div>
 	<div flex layout="column" class="card-content">
 		<md-card-title flex="none" class="card-title md-whiteframe-1dp">
