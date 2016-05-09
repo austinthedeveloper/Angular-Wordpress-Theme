@@ -8,11 +8,11 @@ angular.module('wpAngularTheme')
 		})
 		.state('about',{
 			url:'/about',
-			template: '<page id="11"></page>'
+			template: '<page id="285"></page>'
 		})
 		.state('awards',{
 			url:'/awards',
-			template: '<page id="17"></page>'
+			template: '<page id="288"></page>'
 		})
 		.state('resume',{
 			url:'/resume',
@@ -32,10 +32,10 @@ angular.module('wpAngularTheme')
 		})	
 		.state('contact',{
 			url:'/contact',
-			template: '<page id="15"></page>'
+			template: '<page id="287"></page>'
 		})
 		.state('aboutSite',{
 			url:'/about-the-site',
-			template: '<page id="13"></page>'
+			template: '<page id="286"></page>'
 		})
 })

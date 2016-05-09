@@ -6,7 +6,7 @@ angular.module('wpAngularTheme')
 
 		Processing.on();
 
-		Company.get(60)
+		Company.get(293)
 		.then(function(res) {
 			vm.company = res;
 		}, function(err) {

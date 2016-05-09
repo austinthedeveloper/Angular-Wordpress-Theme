@@ -1,7 +1,7 @@
-<article>
+<article ng-if="$ctrl.post">
     <h1 class="page-title">{{$ctrl.post.title.rendered}}</h1>
 
-	<md-content ng-bind-html="$ctrl.post.content.rendered | to_trusted"></md-content>
+	<md-content ng-bind-html="$ctrl.post.content.rendered"></md-content>
 </article>
 
 <pre-code data="$ctrl.post"></pre-code>
