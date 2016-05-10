@@ -14,6 +14,8 @@ angular.module('wpAngularTheme')
 		vm.refreshPosts();
 
 		vm.is_admin = $rootScope.is_admin;
+
+		vm.dummy = [1,2,3,4,5];
 		
 		//EDITPOST
 		vm.openPost = {};

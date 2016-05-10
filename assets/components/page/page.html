@@ -4,4 +4,6 @@
 	<md-content ng-bind-html="$ctrl.post.content.rendered"></md-content>
 </article>
 
+<dummy ng-if="!$ctrl.post"></dummy>
+
 <pre-code data="$ctrl.post"></pre-code>

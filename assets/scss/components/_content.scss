@@ -37,7 +37,10 @@
 			@include transition($base-transition);
 			&:hover {
 				background: darken($white, 3%);
-			}
+			}			
+		}
+		& .post-image {
+			overflow: hidden;
 		}
 	}
 }
