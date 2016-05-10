@@ -4,8 +4,9 @@ angular.module('github', ['underscore'])
   vm.url = 'https://api.github.com/';
   
   return {
-    getUser: getUser
-  }
+    getUser: getUser,
+    getIssues: getIssues
+  };
   
   function getUser(user) {
     var defer = $q.defer(),
@@ -23,10 +24,25 @@ angular.module('github', ['underscore'])
 		      type: item.type,
 		      repo: item.repo,
 		      message: "Pushed " + item.payload.size + " " + items,
-		      date: item['created_at']
+		      date: item.created_at
 		    };
 		    return obj;
 		  });
+			defer.resolve(data);
+		}).error(function(e){
+			console.log(e);
+			defer.reject(e);
+		});
+
+		return defer.promise;
+  }
+  
+  function getIssues(user, repository) {
+    var defer = $q.defer(),
+        url = vm.url + 'repos/' + user + '/' + repository + '/issues';
+        console.log('url:', url);
+        
+		$http.get(url).success(function(data){
 			defer.resolve(data);
 		}).error(function(e){
 			console.log(e);
