@@ -36,6 +36,6 @@ angular.module('wpAngularTheme')
 		})
 		.state('aboutSite',{
 			url:'/about-the-site',
-			template: '<page id="286"></page>'
+			template: '<about-the-site></about-the-site>'
 		})
 })
