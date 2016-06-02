@@ -1,5 +1,7 @@
 <md-list>
-	<md-list-item class="md-3-line" ng-repeat="item in $ctrl.issues | orderBy: '-created_at'" ng-href="{{item.html_url}}" target="_new" >
+	<md-list-item class="md-3-line" 
+	ng-repeat="item in $ctrl.issues | orderBy: '-created_at'" 
+	ng-href="{{item.html_url}}" target="_new" >
 	  <i class="md-avatar-icon fa fa-github"></i>
 	  <div class="md-list-item-text" layout="column">
 	    <h3>{{item.title}}</h3>

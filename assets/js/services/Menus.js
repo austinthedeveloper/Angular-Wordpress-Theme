@@ -4,7 +4,9 @@ angular.module('wpAngularTheme')
 	var url = ajaxInfo.menu_api_url + 'menus/';
 	// Angular Menu is ID: 19
 
-	vm.get = function(id) {
+	vm.get = get;
+
+	function get(id) {
 		var defer = $q.defer();
 		id = id || '';
 
@@ -15,6 +17,6 @@ angular.module('wpAngularTheme')
 			defer.reject(err);
 		});
 		return defer.promise;
-	};
+	}
 
 }])

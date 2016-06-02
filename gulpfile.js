@@ -32,7 +32,6 @@ gulp.task('js', function(){
 
 gulp.task('angular', function(){
 	gulp.src([
-		'node_modules/tinymce/tinymce.min.js',
 		'node_modules/angular/angular.min.js',
 		'node_modules/angular-resource/angular-resource.min.js',
 		'node_modules/angular-sanitize/angular-sanitize.min.js',
@@ -40,7 +39,6 @@ gulp.task('angular', function(){
 		'node_modules/angular-aria/angular-aria.min.js',
 		'node_modules/angular-messages/angular-messages.min.js',
 		'node_modules/angular-ui-router/release/angular-ui-router.min.js',
-		'node_modules/angular-ui-tinymce/src/tinymce.js',
 		'node_modules/underscore/underscore.js',
 	])
 	.pipe(concat('angular.min.js'))
@@ -56,16 +54,6 @@ gulp.task('angular', function(){
 		'node_modules/tinymce/themes/modern/*.js',
 	])
 	.pipe(gulp.dest('build/js/themes/modern/'));
-	
-	/*gulp.src([
-		'node_modules/tinymce/skins/lightgray/*.css',
-	])
-	.pipe(gulp.dest('build/js/skins/lightgray'));
-	
-	gulp.src([
-		'node_modules/tinymce/skins/lightgray/fonts/*',
-	])
-	.pipe(gulp.dest('build/js/skins/lightgray/fonts'));*/
 })
 
 gulp.task('bootstrap', function(){
