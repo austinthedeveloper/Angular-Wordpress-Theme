@@ -18,8 +18,8 @@ angular.module('wpAngularTheme')
 			url:'/resume',
 			template: '<resume></resume>'
 		})
-		.state('list',{
-			url:'/list',
+		.state('blog',{
+			url:'/blog',
 			template: '<list></list>'
 		})
 		.state('single',{

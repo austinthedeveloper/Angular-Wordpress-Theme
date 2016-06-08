@@ -39,8 +39,12 @@
 				background: darken($white, 3%);
 			}			
 		}
-		& .post-image {
+		.post-image {
 			overflow: hidden;
+		}
+
+		.post-date {
+			text-align: right;
 		}
 	}
 }
