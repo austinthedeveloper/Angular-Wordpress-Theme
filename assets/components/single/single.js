@@ -1,7 +1,8 @@
 angular.module('wpAngularTheme')
 .component('single', {
 	templateUrl: components + 'single/single.html',
-	controller: ['$stateParams','PostsBySlug','Comments', 'Processing', function($stateParams,PostsBySlug,Comments, Processing){
+	controller: ['$stateParams','PostsBySlug', 'Processing', 
+	function($stateParams, PostsBySlug, Processing){
 		var vm = this;
 
 		Processing.on();

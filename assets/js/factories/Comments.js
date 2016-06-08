@@ -1,5 +1,5 @@
 angular.module('wpAngularTheme')
-.factory('Comments',function($resource){
+.factory('Comments',['$resource', function($resource){
 	return $resource(ajaxInfo.api_url+':ID/comments',{
 		ID:'@id'
 	},{
@@ -11,4 +11,4 @@ angular.module('wpAngularTheme')
 			}
 		}
 	});
-})
+}])

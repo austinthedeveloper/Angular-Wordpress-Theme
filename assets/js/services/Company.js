@@ -3,7 +3,9 @@ angular.module('wpAngularTheme')
 	var vm = this;
 	var url = ajaxInfo.api_url + 'company/';
 
-	vm.get = function(id) {
+	vm.get = get;
+
+	function get(id) {
 		var defer = $q.defer();
 		id = id || '';
 
@@ -14,6 +16,6 @@ angular.module('wpAngularTheme')
 			defer.reject(err);
 		});
 		return defer.promise;
-	};
+	}
 	
 }])

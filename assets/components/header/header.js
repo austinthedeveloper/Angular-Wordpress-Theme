@@ -6,7 +6,6 @@ angular.module('wpAngularTheme')
 
 		vm.menu = {
 			"Home": "main",
-			/*"About": "about",*/
 			"Awards": "awards",
 			"Resume": "resume",
 			"Blog": "list",			

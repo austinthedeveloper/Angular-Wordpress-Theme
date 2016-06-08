@@ -1,5 +1,5 @@
 angular.module('github', ['underscore'])
-.service('githubService', function(_, $http, $q) {
+.service('githubService',['_', '$http', '$q', function(_, $http, $q) {
   var vm = this;
   vm.url = 'https://api.github.com/';
   
@@ -51,4 +51,4 @@ angular.module('github', ['underscore'])
 
 		return defer.promise;
   }
-});
+}]);

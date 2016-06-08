@@ -1,5 +1,5 @@
 angular.module('wpAngularTheme')
-.factory('Posts',function($resource){
+.factory('Posts',['$resource', function($resource){
 	return $resource(ajaxInfo.api_url+'posts/:ID',{
 		ID:'@id'
 	},{
@@ -28,4 +28,4 @@ angular.module('wpAngularTheme')
 			}
 		}
 	});
-})
+}])

@@ -23,8 +23,7 @@
               <div class="card-date">{{$ctrl.data.acf.start_date}} - {{$ctrl.data.acf.end_date || 'Present'}}</div>
             </div>
           </md-card-title-text>
-        </md-card-title>
-
-        <md-content flex ng-bind-html="$ctrl.data.content.rendered"></md-content>
+    </md-card-title>
+    <md-content flex ng-bind-html="$ctrl.data.content.rendered"></md-content>
 	</div>
 </md-card>
