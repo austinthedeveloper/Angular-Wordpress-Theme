@@ -39,10 +39,12 @@ angular.module('github', ['underscore'])
   
   function getIssues(user, repository) {
     var defer = $q.defer(),
-        url = vm.url + 'repos/' + user + '/' + repository + '/issues';
-        console.log('url:', url);
+        url = vm.url + 'repos/' + user + '/' + repository + '/issues',
+        params = {
+        	state: 'all'
+        };
         
-		$http.get(url).success(function(data){
+		$http.get(url, {params: params}).success(function(data){
 			defer.resolve(data);
 		}).error(function(e){
 			console.log(e);

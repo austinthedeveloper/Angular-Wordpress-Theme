@@ -11,5 +11,13 @@ angular.module('wpAngularTheme')
 	      console.log('error', err);
 	    });
 
+	    vm.status = function(status) {
+	    	return 'github-' + status;
+	    };
+
+	    vm.properStatus = function(status) {
+
+	    };
+
 	}]
 })
