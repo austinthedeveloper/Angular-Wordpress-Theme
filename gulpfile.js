@@ -40,6 +40,7 @@ gulp.task('angular', function(){
 		'node_modules/angular-messages/angular-messages.min.js',
 		'node_modules/angular-ui-router/release/angular-ui-router.min.js',
 		'node_modules/underscore/underscore.js',
+		'node_modules/angular-filter/dist/angular-filter.js',
 	])
 	.pipe(concat('angular.min.js'))
 	.pipe(gulp.dest('build/js'));

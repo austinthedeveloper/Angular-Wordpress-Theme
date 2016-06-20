@@ -11,5 +11,22 @@ angular.module('wpAngularTheme')
 	      console.log('error', err);
 	    });
 
+	    vm.status = function(status) {
+	    	return 'git-list-item github-' + status;
+	    };
+
+	    vm.statusIcon = function(status) {
+	    	var res;
+	    	switch(status) {
+	    		case 'open':
+	    			res = 'fa-warning';
+	    			break;
+	    		case 'closed':
+	    			res = 'fa-check';
+	    			break;
+	    	}
+	    	return res;
+	    };
+
 	}]
 })

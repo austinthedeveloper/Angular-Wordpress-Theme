@@ -8,7 +8,7 @@ var directory = ajaxInfo.template_directory,
 
 wpAng.init = function(){
 	
-	wpAng.app = angular.module('wpAngularTheme',['ui.router', 'ngMaterial', 'ngAnimate', 'ngResource', 'ngSanitize', 'underscore', 'github', 'stackOverflow'])
+	wpAng.app = angular.module('wpAngularTheme',['ui.router', 'ngMaterial', 'ngAnimate', 'ngResource', 'ngSanitize', 'underscore', 'github', 'stackOverflow', 'angular.filter'])
 	
 	//RUNFUNC
 	.run(['$rootScope', '$window', '$location', 

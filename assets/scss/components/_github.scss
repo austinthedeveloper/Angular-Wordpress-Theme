@@ -1,0 +1,22 @@
+github-issues {
+
+}
+
+.git-list-item {
+	border-left: 4px solid #ccc;	
+	margin-bottom: 8px;
+	&.github-open {
+		border-color: $warning;
+	}
+
+	&.github-closed {
+		border-color: $success;
+	}
+	a {
+		margin: 0 auto;
+	}
+	.md-avatar-icon {
+		font-size: 30px;
+		color: #CCC;
+	}
+}
