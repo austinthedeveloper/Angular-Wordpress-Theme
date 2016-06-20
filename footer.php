@@ -1,5 +1,5 @@
 		</md-content><!-- END md-content --> 
-		
+		</div>
     <!-- WP FOOTER -->
   	<?php wp_footer(); ?>
 	<!--Analytics Tag-->

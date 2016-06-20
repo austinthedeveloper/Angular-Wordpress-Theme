@@ -16,6 +16,11 @@
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />	
 </head>
 <body layout="row" <?php body_class(); ?>>
-<header-menu layout="column" div-hover></header-menu>
+<md-sidenav class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')" layout="column">
+  <header-menu layout="column" flex div-hover></header-menu>
+</md-sidenav>
 
-<md-content class="content-container" layout-padding flex>
+<div flex layout="column">
+<menu-toggle flex="none" hide-gt-sm></menu-toggle>
+<md-content class="content-container" flex>
+  
