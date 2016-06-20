@@ -4,7 +4,6 @@ angular.module('wpAngularTheme')
 	controller: ['$mdSidenav', function($mdSidenav) {
 		var vm = this;
 		vm.toggle = function() {
-			console.log('hit');
 			$mdSidenav('left').toggle();
 		}
 	}]
