@@ -2,7 +2,6 @@ header-menu {
 	background: $primaryColor;
 	@include gradient(darken($primaryColor, 5%), $primaryColor, vertical);
 	width: 100%;
-	max-width: 300px;	
 	color: $white;
 	padding-top: 40px;
 	.header-title {
