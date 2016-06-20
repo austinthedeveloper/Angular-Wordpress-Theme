@@ -22,5 +22,5 @@
 
 <div flex layout="column">
 <menu-toggle flex="none" hide-gt-sm></menu-toggle>
-<md-content class="content-container" flex layout-padding>
+<md-content class="content-container" flex>
   
