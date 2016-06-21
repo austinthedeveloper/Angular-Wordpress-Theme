@@ -11,6 +11,12 @@ Install Instructions
 + Activate Theme under Appearances
 + Run `npm install` - this will also run `gulp init`
 + Come back and fork me
+
+Deploy
+=====================
++ `gulp deploy`
++ Requires the file `ftp-cred.js` for credentials
+
   
 **GLOBAL JS VARIABLES**  
 __set by localize_script in functions.php__  

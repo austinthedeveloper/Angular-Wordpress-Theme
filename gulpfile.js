@@ -5,6 +5,8 @@ var concat = require('gulp-concat');
 var minifyCss = require('gulp-minify-css');
 var sass = require('gulp-sass');
 var watch = require('gulp-watch');
+var ftp = require( 'vinyl-ftp' );
+var creds = require('./ftp-cred.js');
 
 var bases = {
  build: 'build/'
@@ -78,6 +80,28 @@ gulp.task('copy', function() {
  // Copy images
  gulp.src(['**/*'], {cwd: 'assets/images'})
  .pipe(gulp.dest(bases.build + 'images'));
+
+});
+
+gulp.task( 'deploy', function () {
+
+    var conn = ftp.create( creds.creds );
+
+    var globs = creds.globs;
+
+    // using base = '.' will transfer everything to /public_html correctly
+    // turn off buffering in gulp.src for best performance
+
+    var destUrl = creds.destination;
+
+    gulp.src( globs, 
+		    {
+		    	base: '.',
+		    	buffer: false 
+		    } 
+	    )
+        .pipe(conn.newer(destUrl))
+        .pipe(conn.dest(destUrl));
 
 });
 
