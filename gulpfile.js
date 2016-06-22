@@ -1,10 +1,9 @@
 var gulp = require('gulp');
 
-var clean = require('gulp-clean');
-var concat = require('gulp-concat');
-var minifyCss = require('gulp-minify-css');
-var sass = require('gulp-sass');
-var watch = require('gulp-watch');
+// Require Plugins
+var plugins = require('gulp-load-plugins')();
+
+// ftp
 var ftp = require( 'vinyl-ftp' );
 var creds = require('./ftp-cred.js');
 
@@ -14,8 +13,8 @@ var bases = {
 
 gulp.task('sass', function(){
 	gulp.src('assets/scss/styles.scss')
-		.pipe(sass().on('error', sass.logError))
-		.pipe(minifyCss({compatibility:'ie8'}))
+		.pipe(plugins.sass().on('error', plugins.sass.logError))
+		.pipe(plugins.minifyCss({compatibility:'ie8'}))
 		.pipe(gulp.dest('build/css/'));
 	
 });
@@ -23,12 +22,12 @@ gulp.task('sass', function(){
 // Delete the dist directory
 gulp.task('clean', function() {
  return gulp.src(bases.build)
- .pipe(clean());
+ .pipe(plugins.clean());
 });
 
 gulp.task('js', function(){
 	gulp.src(['assets/js/**/*.js', 'assets/components/**/*.js'])
-		.pipe(concat('scripts.js'))
+		.pipe(plugins.concat('scripts.js'))
 		.pipe(gulp.dest('build/js'));
 });
 
@@ -44,7 +43,7 @@ gulp.task('angular', function(){
 		'node_modules/underscore/underscore.js',
 		'node_modules/angular-filter/dist/angular-filter.js',
 	])
-	.pipe(concat('angular.min.js'))
+	.pipe(plugins.concat('angular.min.js'))
 	.pipe(gulp.dest('build/js'));
 	
 	gulp.src([
@@ -61,13 +60,13 @@ gulp.task('angular', function(){
 
 gulp.task('bootstrap', function(){
 	gulp.src('node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js')
-	.pipe(concat('bootstrap.js'))
+	.pipe(plugins.concat('bootstrap.js'))
 	.pipe(gulp.dest('build/js'));
 });
 
 gulp.task('material', function(){
 	gulp.src('node_modules/angular-material/angular-material.js')
-	.pipe(concat('material.js'))
+	.pipe(plugins.concat('material.js'))
 	.pipe(gulp.dest('build/js'));
 });
 
