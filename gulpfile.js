@@ -1,12 +1,7 @@
 var gulp = require('gulp');
 
-// Require Plugins
+// Require All Plugins
 var plugins = require('gulp-load-plugins')();
-
-// ftp
-var ftp = require( 'vinyl-ftp' );
-var creds = require('./ftp-cred.js');
-
 var bases = {
  build: 'build/'
 };
@@ -16,43 +11,29 @@ function getTask(task) {
     return require('./tasks/' + task)(gulp, plugins, bases);
 }
 
+// Runs sass. Does not watch by itself
 gulp.task('sass', getTask('sass'));
 
 // Delete the dist directory
 gulp.task('clean', getTask('clean'));
 
+// Combine all app js files
 gulp.task('js', getTask('js'));
 
+// Angular files
 gulp.task('angular', getTask('angular'));
 
+// Bootstrap files
 gulp.task('bootstrap', getTask('bootstrap'));
 
+// Material files
 gulp.task('material', getTask('material'));
 
 // Copy all other files to dist directly
 gulp.task('copy', getTask('copy'));
 
-gulp.task('deploy', function () {
-
-    var conn = ftp.create( creds.creds );
-
-    var globs = creds.globs;
-
-    // using base = '.' will transfer everything to /public_html correctly
-    // turn off buffering in gulp.src for best performance
-
-    var destUrl = creds.destination;
-
-    gulp.src( globs, 
-		    {
-		    	base: '.',
-		    	buffer: false 
-		    } 
-	    )
-        .pipe(conn.newer(destUrl))
-        .pipe(conn.dest(destUrl));
-
-});
+// FTP task
+gulp.task('deploy', getTask('deploy'));
 
 gulp.task('watch', function(){
 	gulp.watch('assets/scss/**/*.scss', ['sass']);
@@ -60,7 +41,6 @@ gulp.task('watch', function(){
 	gulp.watch('assets/html/**/*.html', ['copy']);
 	gulp.watch('assets/images/**/*', ['copy']);
 })
-
 
 gulp.task('init', ['copy', 'sass', 'js', 'angular', 'material', 'watch']);
 gulp.task('default', ['sass','js']);
