@@ -11,78 +11,28 @@ var bases = {
  build: 'build/'
 };
 
-gulp.task('sass', function(){
-	gulp.src('assets/scss/styles.scss')
-		.pipe(plugins.sass().on('error', plugins.sass.logError))
-		.pipe(plugins.minifyCss({compatibility:'ie8'}))
-		.pipe(gulp.dest('build/css/'));
-	
-});
+// Short-hand function to get a task
+function getTask(task) {
+    return require('./tasks/' + task)(gulp, plugins, bases);
+}
+
+gulp.task('sass', getTask('sass'));
 
 // Delete the dist directory
-gulp.task('clean', function() {
- return gulp.src(bases.build)
- .pipe(plugins.clean());
-});
+gulp.task('clean', getTask('clean'));
 
-gulp.task('js', function(){
-	gulp.src(['assets/js/**/*.js', 'assets/components/**/*.js'])
-		.pipe(plugins.concat('scripts.js'))
-		.pipe(gulp.dest('build/js'));
-});
+gulp.task('js', getTask('js'));
 
-gulp.task('angular', function(){
-	gulp.src([
-		'node_modules/angular/angular.min.js',
-		'node_modules/angular-resource/angular-resource.min.js',
-		'node_modules/angular-sanitize/angular-sanitize.min.js',
-		'node_modules/angular-animate/angular-animate.min.js',
-		'node_modules/angular-aria/angular-aria.min.js',
-		'node_modules/angular-messages/angular-messages.min.js',
-		'node_modules/angular-ui-router/release/angular-ui-router.min.js',
-		'node_modules/underscore/underscore.js',
-		'node_modules/angular-filter/dist/angular-filter.js',
-	])
-	.pipe(plugins.concat('angular.min.js'))
-	.pipe(gulp.dest('build/js'));
-	
-	gulp.src([
-		'node_modules/angular/angular.min.js.map', 
-		'node_modules/angular-resource/angular-resource.min.js.map'
-	])
-	.pipe(gulp.dest('build/js'));
-	
-	gulp.src([
-		'node_modules/tinymce/themes/modern/*.js',
-	])
-	.pipe(gulp.dest('build/js/themes/modern/'));
-})
+gulp.task('angular', getTask('angular'));
 
-gulp.task('bootstrap', function(){
-	gulp.src('node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js')
-	.pipe(plugins.concat('bootstrap.js'))
-	.pipe(gulp.dest('build/js'));
-});
+gulp.task('bootstrap', getTask('bootstrap'));
 
-gulp.task('material', function(){
-	gulp.src('node_modules/angular-material/angular-material.js')
-	.pipe(plugins.concat('material.js'))
-	.pipe(gulp.dest('build/js'));
-});
+gulp.task('material', getTask('material'));
 
 // Copy all other files to dist directly
-gulp.task('copy', function() {
- // Copy html
- gulp.src(['**/*.html'], {cwd: 'assets/html'})
- .pipe(gulp.dest(bases.build + 'html'));
+gulp.task('copy', getTask('copy'));
 
- // Copy images
- gulp.src(['**/*'], {cwd: 'assets/images'})
- .pipe(gulp.dest(bases.build + 'images'));
-
-});
-
-gulp.task( 'deploy', function () {
+gulp.task('deploy', function () {
 
     var conn = ftp.create( creds.creds );
 

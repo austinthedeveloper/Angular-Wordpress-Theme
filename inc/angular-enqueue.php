@@ -17,8 +17,8 @@ class angular_enqueue {
 		wp_enqueue_script( 'angular_theme', get_template_directory_uri().'/build/js/scripts.js', array( 'angular_core' ), null, false );
 		//wp_enqueue_script( 'angular_theme', get_template_directory_uri().'/assets/js/angular-app.js', array( 'angular_core' ), null, false );
 
-		$url = rest_get_url_prefix();
-		// $url = 'http://austinthedeveloper.com/wp-json';
+		// $url = rest_get_url_prefix();
+		$url = 'http://austinthedeveloper.com/wp-json';
 		wp_localize_script( 'angular_theme', 'ajaxInfo',
 			array(
 				
