@@ -1,109 +1,39 @@
 var gulp = require('gulp');
 
-var clean = require('gulp-clean');
-var concat = require('gulp-concat');
-var minifyCss = require('gulp-minify-css');
-var sass = require('gulp-sass');
-var watch = require('gulp-watch');
-var ftp = require( 'vinyl-ftp' );
-var creds = require('./ftp-cred.js');
-
+// Require All Plugins
+var plugins = require('gulp-load-plugins')();
 var bases = {
  build: 'build/'
 };
 
-gulp.task('sass', function(){
-	gulp.src('assets/scss/styles.scss')
-		.pipe(sass().on('error', sass.logError))
-		.pipe(minifyCss({compatibility:'ie8'}))
-		.pipe(gulp.dest('build/css/'));
-	
-});
+// Short-hand function to get a task
+function getTask(task) {
+    return require('./tasks/' + task)(gulp, plugins, bases);
+}
+
+// Runs sass. Does not watch by itself
+gulp.task('sass', getTask('sass'));
 
 // Delete the dist directory
-gulp.task('clean', function() {
- return gulp.src(bases.build)
- .pipe(clean());
-});
+gulp.task('clean', getTask('clean'));
 
-gulp.task('js', function(){
-	gulp.src(['assets/js/**/*.js', 'assets/components/**/*.js'])
-		.pipe(concat('scripts.js'))
-		.pipe(gulp.dest('build/js'));
-});
+// Combine all app js files
+gulp.task('js', getTask('js'));
 
-gulp.task('angular', function(){
-	gulp.src([
-		'node_modules/angular/angular.min.js',
-		'node_modules/angular-resource/angular-resource.min.js',
-		'node_modules/angular-sanitize/angular-sanitize.min.js',
-		'node_modules/angular-animate/angular-animate.min.js',
-		'node_modules/angular-aria/angular-aria.min.js',
-		'node_modules/angular-messages/angular-messages.min.js',
-		'node_modules/angular-ui-router/release/angular-ui-router.min.js',
-		'node_modules/underscore/underscore.js',
-		'node_modules/angular-filter/dist/angular-filter.js',
-	])
-	.pipe(concat('angular.min.js'))
-	.pipe(gulp.dest('build/js'));
-	
-	gulp.src([
-		'node_modules/angular/angular.min.js.map', 
-		'node_modules/angular-resource/angular-resource.min.js.map'
-	])
-	.pipe(gulp.dest('build/js'));
-	
-	gulp.src([
-		'node_modules/tinymce/themes/modern/*.js',
-	])
-	.pipe(gulp.dest('build/js/themes/modern/'));
-})
+// Angular files
+gulp.task('angular', getTask('angular'));
 
-gulp.task('bootstrap', function(){
-	gulp.src('node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js')
-	.pipe(concat('bootstrap.js'))
-	.pipe(gulp.dest('build/js'));
-});
+// Bootstrap files
+gulp.task('bootstrap', getTask('bootstrap'));
 
-gulp.task('material', function(){
-	gulp.src('node_modules/angular-material/angular-material.js')
-	.pipe(concat('material.js'))
-	.pipe(gulp.dest('build/js'));
-});
+// Material files
+gulp.task('material', getTask('material'));
 
 // Copy all other files to dist directly
-gulp.task('copy', function() {
- // Copy html
- gulp.src(['**/*.html'], {cwd: 'assets/html'})
- .pipe(gulp.dest(bases.build + 'html'));
+gulp.task('copy', getTask('copy'));
 
- // Copy images
- gulp.src(['**/*'], {cwd: 'assets/images'})
- .pipe(gulp.dest(bases.build + 'images'));
-
-});
-
-gulp.task( 'deploy', function () {
-
-    var conn = ftp.create( creds.creds );
-
-    var globs = creds.globs;
-
-    // using base = '.' will transfer everything to /public_html correctly
-    // turn off buffering in gulp.src for best performance
-
-    var destUrl = creds.destination;
-
-    gulp.src( globs, 
-		    {
-		    	base: '.',
-		    	buffer: false 
-		    } 
-	    )
-        .pipe(conn.newer(destUrl))
-        .pipe(conn.dest(destUrl));
-
-});
+// FTP task
+gulp.task('deploy', getTask('deploy'));
 
 gulp.task('watch', function(){
 	gulp.watch('assets/scss/**/*.scss', ['sass']);
@@ -111,7 +41,6 @@ gulp.task('watch', function(){
 	gulp.watch('assets/html/**/*.html', ['copy']);
 	gulp.watch('assets/images/**/*', ['copy']);
 })
-
 
 gulp.task('init', ['copy', 'sass', 'js', 'angular', 'material', 'watch']);
 gulp.task('default', ['sass','js']);
