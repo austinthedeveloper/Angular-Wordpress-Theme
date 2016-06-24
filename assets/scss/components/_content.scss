@@ -3,9 +3,9 @@
 	overflow-x: hidden;
 }
 
-single, page {
+single, page, list {
 	display: block;
-	padding: 0;
+	padding: 0 !important;
 }
 
 .main-content {
@@ -56,6 +56,13 @@ single, page {
 			text-align: right;
 		}
 	}
+}
+
+.single-navigation {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
 }
 
 .link-icon {

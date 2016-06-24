@@ -1,5 +1,5 @@
 angular.module('wpAngularTheme')
-.service('Post',['$http', '$q', function($http, $q){
+.service('Post',['$http', '$q', '$stateParams', function($http, $q, $stateParams){
 	var vm = this;
 	var url = ajaxInfo.api_url + 'posts/';
 
@@ -9,7 +9,7 @@ angular.module('wpAngularTheme')
 	function get(slug) {
 		var defer = $q.defer();
 		var obj = {
-			slug: slug
+			slug: slug || $stateParams.slug
 		};
 
 		$http.get(url, {params: obj})
