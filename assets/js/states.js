@@ -20,7 +20,7 @@ angular.module('wpAngularTheme')
 		})
 		.state('blog',{
 			url:'/blog',
-			template: '<list></list>'
+			template: '<blog></blog>'
 		})
 		.state('single',{
 			url:'/post/:slug',

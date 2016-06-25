@@ -28,8 +28,9 @@ single, page, list {
 	}
 	.page-title {
 		font-weight: bold;
-		font-size: 2em;
-		margin: .3em 0 .15em;
+		font-size: 1.8em;
+		line-height: 1.5em;
+		margin: 10px 0;
 		@media screen and (max-width: $break-small) {
 			font-size: 1.5em;
 			line-height: 1.3em;
@@ -51,9 +52,14 @@ single, page, list {
 		.post-image {
 			overflow: hidden;
 		}
+		.post-title {
+			line-height: 1.3em;
+			margin: 10px 0;
+		}
 
 		.post-date {
 			text-align: right;
+			font-size: 17px;
 		}
 	}
 }
