@@ -1,6 +1,6 @@
 angular.module('wpAngularTheme')
-.component('list', {
-	templateUrl: components + 'list/list.html',
+.component('blog', {
+	templateUrl: components + 'blog/blog.html',
 	controller: ['$rootScope', 'Post', 'Processing', function($rootScope, Post, Processing){
 		var vm = this;
 
@@ -8,6 +8,11 @@ angular.module('wpAngularTheme')
 		refreshPosts();
 
 		vm.is_admin = $rootScope.is_admin;
+
+		vm.search = '';
+		vm.searchOptions = { 
+			debounce: { 'default': 500, 'blur': 0 } 
+		};
 
 		function refreshPosts(){
 			Processing.on();

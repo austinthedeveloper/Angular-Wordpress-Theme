@@ -30,6 +30,10 @@ angular.module('wpAngularTheme')
 				link: "http://stackoverflow.com/users/2404112/austinthedeveloper",
 				icon: "fa-stack-overflow"
 			},
+			"Phone": {
+				link: "tel:8304562261",
+				icon: "fa-phone"
+			},
 		}
 	}]
 })

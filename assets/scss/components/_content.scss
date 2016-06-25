@@ -3,9 +3,9 @@
 	overflow-x: hidden;
 }
 
-single, page {
+single, page, list, github-issues {
 	display: block;
-	padding: 0;
+	padding: 0 !important;
 }
 
 .main-content {
@@ -28,8 +28,9 @@ single, page {
 	}
 	.page-title {
 		font-weight: bold;
-		font-size: 2em;
-		margin: .3em 0 .15em;
+		font-size: 1.8em;
+		line-height: 1.5em;
+		margin: 10px 0;
 		@media screen and (max-width: $break-small) {
 			font-size: 1.5em;
 			line-height: 1.3em;
@@ -51,11 +52,23 @@ single, page {
 		.post-image {
 			overflow: hidden;
 		}
+		.post-title {
+			line-height: 1.3em;
+			margin: 10px 0;
+		}
 
 		.post-date {
 			text-align: right;
+			font-size: 17px;
 		}
 	}
+}
+
+.single-navigation {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
 }
 
 .link-icon {

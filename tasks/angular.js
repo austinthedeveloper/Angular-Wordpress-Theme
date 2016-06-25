@@ -12,6 +12,7 @@ module.exports = function(gulp, plugins){
 			'node_modules/angular-filter/dist/angular-filter.js',
 		])
 		.pipe(plugins.concat('angular.min.js'))
+		.pipe(plugins.uglify())
 		.pipe(gulp.dest('build/js'));
 		
 		gulp.src([
@@ -19,10 +20,5 @@ module.exports = function(gulp, plugins){
 			'node_modules/angular-resource/angular-resource.min.js.map'
 		])
 		.pipe(gulp.dest('build/js'));
-		
-		gulp.src([
-			'node_modules/tinymce/themes/modern/*.js',
-		])
-		.pipe(gulp.dest('build/js/themes/modern/'));
 	};	
 };

@@ -1,15 +1,20 @@
 angular.module('wpAngularTheme')
 .component('single', {
 	templateUrl: components + 'single/single.html',
-	controller: ['$stateParams','Post', 'Processing', 
-	function($stateParams, Post, Processing){
+	controller: ['Post', 'Processing', 
+	function(Post, Processing){
 		var vm = this;
-		vm.slug = $stateParams.slug;
 
 		Processing.on();
 
-		Post.get(vm.slug).then(function(res){
+		Post.get()
+		.then(
+		function(res){
 			vm.post = res;
+			Processing.off();
+		},
+		function(err){
+			console.log('error', err);
 			Processing.off();
 		});
 		

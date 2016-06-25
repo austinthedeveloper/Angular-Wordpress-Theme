@@ -3,10 +3,12 @@ header-menu {
 	@include gradient(darken($primaryColor, 5%), $primaryColor, vertical);
 	width: 100%;
 	color: $white;
-	padding-top: 40px;
 	.header-title {
 		text-align: center;
-		padding-bottom: 30px;
+		padding: 40px 0 30px;
+		@media screen and (max-width: $break-small) {
+			padding: 20px 0 5px;
+		}
 	}
 	h1, h2 {
 		text-transform: uppercase;
@@ -50,6 +52,11 @@ header-menu {
 		$icon-size: 40px;
 		font-size: $icon-size;
 		height: $icon-size;
-		color: $white;		
+		color: $white;
+		@media screen and (max-width: $break-small) {
+			$icon-size: 30px;
+			font-size: $icon-size;
+			height: $icon-size;
+		}
 	}
 }
