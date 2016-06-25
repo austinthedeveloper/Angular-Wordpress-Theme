@@ -9,6 +9,11 @@ angular.module('wpAngularTheme')
 
 		vm.is_admin = $rootScope.is_admin;
 
+		vm.search = '';
+		vm.searchOptions = { 
+			debounce: { 'default': 500, 'blur': 0 } 
+		};
+
 		function refreshPosts(){
 			Processing.on();
 			Post.getAll().then(function(res){
