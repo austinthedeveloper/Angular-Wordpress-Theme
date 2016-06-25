@@ -12,6 +12,7 @@ module.exports = function(gulp, plugins){
 			'node_modules/angular-filter/dist/angular-filter.js',
 		])
 		.pipe(plugins.concat('angular.min.js'))
+		.pipe(plugins.uglify())
 		.pipe(gulp.dest('build/js'));
 		
 		gulp.src([
