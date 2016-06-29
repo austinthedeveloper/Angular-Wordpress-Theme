@@ -17,11 +17,11 @@ angular.module('wpAngularTheme')
 		function refreshPosts(){
 			Processing.on();
 			ProjectService.getAll().then(function(res){
-				vm.posts = res;
+				vm.projects = res;
 				Processing.off();
 			},
 			function(err){
-				vm.posts = [];
+				vm.projects = [];
 				console.log('Error:', err);
 				Processing.off();
 			});

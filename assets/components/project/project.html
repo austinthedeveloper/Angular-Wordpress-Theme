@@ -8,6 +8,10 @@
 	    <img ng-src="{{$ctrl.post.better_featured_image.source_url}}">
     </div>
 	<md-content ng-bind-html="$ctrl.post.content.rendered"></md-content>
+	<div class="post-image" ng-if="$ctrl.post.acf.gallery">
+		<h2>Additional Screenshots</h2>
+	    <div ng-bind-html="$ctrl.post.acf.gallery"></div>
+    </div>
 </article>
 
 <dummy ng-if="!$ctrl.post"></dummy>
