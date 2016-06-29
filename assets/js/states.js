@@ -38,4 +38,12 @@ angular.module('wpAngularTheme')
 			url:'/about-the-site',
 			template: '<about-the-site></about-the-site>'
 		})
+		.state('projects',{
+			url:'/projects',
+			template: '<projects></projects>'
+		})
+		.state('project',{
+			url:'/project/:slug',
+			template: '<project></project>'
+		})
 })
