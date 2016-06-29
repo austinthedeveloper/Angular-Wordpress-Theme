@@ -7,5 +7,9 @@ module.exports = function(gulp, plugins, bases){
 		 // Copy images
 		 gulp.src(['**/*'], {cwd: 'assets/images'})
 		 .pipe(gulp.dest(bases.build + 'images'));
+
+		 // Copy fonts
+		 gulp.src(['**/*'], {cwd: 'assets/fonts'})
+		 .pipe(gulp.dest(bases.build + 'fonts'));
 	};	
 };
