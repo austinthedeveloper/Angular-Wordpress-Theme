@@ -37,4 +37,5 @@ gulp.task('watch', function(){
 })
 
 gulp.task('init', ['copy', 'sass', 'js', 'angular', 'watch']);
+gulp.task('ftp', ['copy', 'sass', 'js', 'angular', 'deploy']);
 gulp.task('default', ['sass','js']);
