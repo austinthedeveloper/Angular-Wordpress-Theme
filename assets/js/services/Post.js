@@ -12,7 +12,7 @@ angular.module('wpAngularTheme')
 			slug: slug || $stateParams.slug
 		};
 
-		$http.get(url, {params: obj})
+		$http.get(url, {params: obj, cache: true})
 		.success(function(res) {
 			defer.resolve(res[0]);
 		}).error(function(err) {

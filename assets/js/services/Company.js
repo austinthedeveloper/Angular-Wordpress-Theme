@@ -9,7 +9,7 @@ angular.module('wpAngularTheme')
 		var defer = $q.defer();
 		id = id || '';
 
-		$http.get(url + id)
+		$http.get(url + id, {cache: true})
 		.success(function(res) {
 			defer.resolve(res);
 		}).error(function(err) {
