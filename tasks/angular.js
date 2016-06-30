@@ -10,6 +10,7 @@ module.exports = function(gulp, plugins){
 			'node_modules/angular-ui-router/release/angular-ui-router.min.js',
 			'node_modules/underscore/underscore.js',
 			'node_modules/angular-filter/dist/angular-filter.js',
+			'node_modules/angular-material/angular-material.js'
 		])
 		.pipe(plugins.concat('angular.min.js'))
 		.pipe(plugins.uglify())

@@ -1,0 +1,19 @@
+<div class="single-navigation" ng-if="$ctrl.post">
+	<md-button ui-sref="projects">Back to Projects</md-button>
+</div>
+
+<article ng-if="$ctrl.post">
+    <h1 class="page-title">{{$ctrl.post.title.rendered}}</h1>
+    <div class="post-image" ng-if="$ctrl.post.better_featured_image">
+	    <img ng-src="{{$ctrl.post.better_featured_image.source_url}}">
+    </div>
+	<md-content ng-bind-html="$ctrl.post.content.rendered"></md-content>
+	<div class="post-image" ng-if="$ctrl.post.acf.gallery">
+		<h2>Additional Assets</h2>
+	    <div ng-bind-html="$ctrl.post.acf.gallery"></div>
+    </div>
+</article>
+
+<dummy ng-if="!$ctrl.post"></dummy>
+
+<pre-code data="$ctrl.post"></pre-code>

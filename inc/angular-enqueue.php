@@ -12,10 +12,8 @@ class angular_enqueue {
 	function angular_scripts() {
 		
 		wp_enqueue_script( 'angular_core', get_template_directory_uri().'/build/js/angular.min.js', array( 'jquery' ), null, false );
-		wp_enqueue_script( 'material-js', get_template_directory_uri().'/build/js/material.js', array( 'jquery' ), null, false );
 		
 		wp_enqueue_script( 'angular_theme', get_template_directory_uri().'/build/js/scripts.js', array( 'angular_core' ), null, false );
-		//wp_enqueue_script( 'angular_theme', get_template_directory_uri().'/assets/js/angular-app.js', array( 'angular_core' ), null, false );
 
 		// $url = rest_get_url_prefix();
 		$url = 'http://austinthedeveloper.com/wp-json';
