@@ -3,15 +3,15 @@
 	overflow-x: hidden;
 }
 
-single, page, list, github-issues, projects, project, blog, resume {
+single, page, list, github-issues, projects, project, blog, resume, about-the-site {
 	display: block;
-	padding: 0 !important;
 }
 
 .main-content {
 	width: 95%;
 	max-width: 700px;
 	margin: auto;	
+	padding-top: 10px;
 	padding-bottom: 25px;
 	font-size: 20px;
 	line-height: 1.8;
