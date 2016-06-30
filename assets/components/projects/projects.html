@@ -13,7 +13,7 @@
 	        <md-card-title>
 	          <md-card-title-text>
 	            <span class="md-headline">{{post.title.rendered}}</span>
-	            <span class="md-subhead">{{post.acf.project_date | date:'mediumDate'}}</span>
+	            <span class="md-subhead text-right">Project Date: {{post.acf.project_date | date:'mediumDate'}}</span>
 	          </md-card-title-text>
 	        </md-card-title>
 	        <md-card-content ng-bind-html="post.excerpt.rendered">

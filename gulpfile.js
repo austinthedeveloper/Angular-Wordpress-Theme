@@ -23,12 +23,6 @@ gulp.task('js', getTask('js'));
 // Angular files
 gulp.task('angular', getTask('angular'));
 
-// Bootstrap files
-gulp.task('bootstrap', getTask('bootstrap'));
-
-// Material files
-gulp.task('material', getTask('material'));
-
 // Copy all other files to dist directly
 gulp.task('copy', getTask('copy'));
 
@@ -42,5 +36,5 @@ gulp.task('watch', function(){
 	gulp.watch('assets/images/**/*', ['copy']);
 })
 
-gulp.task('init', ['copy', 'sass', 'js', 'angular', 'material', 'watch']);
+gulp.task('init', ['copy', 'sass', 'js', 'angular', 'watch']);
 gulp.task('default', ['sass','js']);

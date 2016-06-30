@@ -3,7 +3,7 @@
 	overflow-x: hidden;
 }
 
-single, page, list, github-issues {
+single, page, list, github-issues, projects, project, blog {
 	display: block;
 	padding: 0 !important;
 }
@@ -77,4 +77,12 @@ single, page, list, github-issues {
 
 .read-more {
 
+}
+
+.text-right {
+	text-align: right;
+}
+
+.text-left {
+	text-align: left;
 }
