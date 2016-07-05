@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />	
 </head>
 <body layout="row" <?php body_class(); ?>>
-  <md-sidenav class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')" layout="column">
+  <md-sidenav class="md-sidenav-left main-sidenav" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')" layout="column">
     <header-menu layout="column" flex div-hover></header-menu>
   </md-sidenav>
 

@@ -1,6 +1,18 @@
 @media print {
-	header-menu {
-		display: none;
+	.main-sidenav, menu-toggle, card .logo {
+		display: none !important;
+	}
+	card {
+		min-height: none;
+		.logo {
+			display: none !important;
+		}		
+		.card-content {
+			max-height: none;
+		}
+	}
+	.md-whiteframe-1dp, .md-whiteframe-z1 {
+		box-shadow: none;
 	}
 	body, .content-container {
 		height: auto;
