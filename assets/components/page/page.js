@@ -6,7 +6,7 @@ angular.module('wpAngularTheme')
 	templateUrl: components + 'page/page.html',
 	controller: ['Page', '$stateParams', 'Processing', function(Page, $stateParams, Processing) {
 		var vm = this;
-		
+
 		vm.id = vm.id || $stateParams.slug || '';
 
 		Processing.on();

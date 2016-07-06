@@ -13,14 +13,14 @@ module.exports = function(gulp, plugins){
 
 	    var destUrl = creds.destination;
 
-	    gulp.src( globs, 
+	    gulp.src( globs,
 			    {
 			    	base: '.',
-			    	buffer: false 
-			    } 
+			    	buffer: false
+			    }
 		    )
 	        .pipe(conn.newer(destUrl))
 	        .pipe(conn.dest(destUrl));
 
-	};	
+	};
 };

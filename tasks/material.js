@@ -4,5 +4,5 @@ module.exports = function(gulp, plugins){
 		.pipe(plugins.concat('material.js'))
 		.pipe(plugins.uglify())
 		.pipe(gulp.dest('build/js'));
-	};	
+	};
 };
