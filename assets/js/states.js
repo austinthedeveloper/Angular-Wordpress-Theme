@@ -26,6 +26,10 @@ angular.module('wpAngularTheme')
 			url:'/post/:slug',
 			template: '<single></single>'
 		})		
+		.state('category',{
+			url:'/post/category/:slug',
+			template: '<category></category>'
+		})	
 		.state('page',{
 			url:'/page/:slug',
 			template: '<page></page>'
