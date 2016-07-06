@@ -8,8 +8,8 @@ angular.module('wpAngularTheme')
 			"Home": "main",
 			"Awards": "awards",
 			"Resume": "resume",
-			"Blog": "blog",	
-			"Projects": "projects",		
+			"Blog": "blog",
+			"Projects": "projects",
 			"Contact": "contact",
 			"About The Site": "aboutSite"
 		};

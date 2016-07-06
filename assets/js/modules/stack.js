@@ -5,13 +5,13 @@ angular.module('stackOverflow', ['underscore'])
     var params = {
       site: "stackoverflow"
     };
-    
+
     return {
       getUser: getUser,
       getBadges: getBadges,
       getComments: getComments
     };
-    
+
     function getUser(user) {
       var delay = $q.defer();
 
@@ -22,7 +22,7 @@ angular.module('stackOverflow', ['underscore'])
 
       return delay.promise;
     }
-    
+
     function getComments(user) {
       var delay = $q.defer();
 
@@ -50,13 +50,13 @@ angular.module('stackOverflow', ['underscore'])
             };
             return obj;
           });
-          
+
           delay.resolve(data);
         });
 
       return delay.promise;
     }
-    
+
     function getBadges(user) {
       var delay = $q.defer();
 
@@ -70,7 +70,7 @@ angular.module('stackOverflow', ['underscore'])
 
       return delay.promise;
     }
-    
+
     function sanitizeDate(date){
       var d = new Date(0); // The 0 there is the key, which sets the date to the epoch
       return d.setUTCSeconds(date);

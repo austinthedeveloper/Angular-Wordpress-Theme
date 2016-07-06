@@ -1,6 +1,6 @@
 <md-list class="git-list">
-	<md-list-item class="md-2-line" 
-	ng-repeat="item in $ctrl.issues | orderBy: '-created_at'" 
+	<md-list-item class="md-2-line"
+	ng-repeat="item in $ctrl.issues | orderBy: '-created_at'"
 	ng-href="{{item.html_url}}" target="_new"
 	ng-class="$ctrl.status(item.state)">
 	  <i class="md-avatar-icon fa" ng-class="$ctrl.statusIcon(item.state)"></i>

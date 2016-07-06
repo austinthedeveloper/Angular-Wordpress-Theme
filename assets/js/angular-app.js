@@ -7,15 +7,15 @@ var directory = ajaxInfo.template_directory,
 	components = directory + 'assets/components/';
 
 wpAng.init = function(){
-	
+
 	wpAng.app = angular.module('wpAngularTheme',['ui.router', 'ngMaterial', 'ngAnimate', 'ngResource', 'ngSanitize', 'underscore', 'github', 'stackOverflow', 'angular.filter']);
-	
+
 	//RUNFUNC
 	wpAng.app
-	.run(['$rootScope', '$window', '$location', '$mdSidenav', 
-		function($rootScope, $window, $location, $mdSidenav){	
+	.run(['$rootScope', '$window', '$location', '$mdSidenav',
+		function($rootScope, $window, $location, $mdSidenav){
 			$rootScope.dir = directory;
-			
+
 			$rootScope.is_admin = ajaxInfo.is_admin;
 
 			// Google Analytics Page Tracking

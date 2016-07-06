@@ -4,5 +4,5 @@ module.exports = function(gulp, plugins){
 		.pipe(plugins.sass().on('error', plugins.sass.logError))
 		.pipe(plugins.minifyCss({compatibility:'ie8'}))
 		.pipe(gulp.dest('build/css/'));
-	};	
+	};
 };

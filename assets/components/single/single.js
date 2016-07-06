@@ -1,7 +1,7 @@
 angular.module('wpAngularTheme')
 .component('single', {
 	templateUrl: components + 'single/single.html',
-	controller: ['Post', 'Processing', 
+	controller: ['Post', 'Processing',
 	function(Post, Processing){
 		var vm = this;
 
@@ -17,6 +17,6 @@ angular.module('wpAngularTheme')
 			console.log('error', err);
 			Processing.off();
 		});
-		
+
 	}]
 })

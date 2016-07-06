@@ -10,8 +10,8 @@ angular.module('wpAngularTheme')
 		vm.is_admin = $rootScope.is_admin;
 
 		vm.search = '';
-		vm.searchOptions = { 
-			debounce: { 'default': 500, 'blur': 0 } 
+		vm.searchOptions = {
+			debounce: { 'default': 500, 'blur': 0 }
 		};
 
 		function refreshPosts(){
@@ -26,6 +26,6 @@ angular.module('wpAngularTheme')
 				Processing.off();
 			});
 		}
-		
+
 	}]
 })

@@ -7,6 +7,6 @@ angular.module('wpAngularTheme')
 		$rootScope.$watch('processing', function(newVal) {
 			vm.process = newVal;
 		});
-		
+
 	}]
 })

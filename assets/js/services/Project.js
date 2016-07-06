@@ -25,7 +25,7 @@ angular.module('wpAngularTheme')
 		var defer = $q.defer();
 
 		$http.get(url, {
-			cache: true, 
+			cache: true,
 			params: {
 				per_page: 100
 			}

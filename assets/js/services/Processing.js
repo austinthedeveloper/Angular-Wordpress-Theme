@@ -1,7 +1,7 @@
 angular.module('wpAngularTheme')
 .service('Processing',['$rootScope', function($rootScope){
 	var vm = this;
-	
+
 	vm.on = on;
 	vm.off = off;
 	vm.toggle = toggle;
@@ -15,5 +15,5 @@ angular.module('wpAngularTheme')
 	function toggle() {
 		$rootScope.processing = !$rootScope.processing;
 	};
-	
+
 }])

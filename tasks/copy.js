@@ -11,5 +11,5 @@ module.exports = function(gulp, plugins, bases){
 		 // Copy fonts
 		 gulp.src(['**/*'], {cwd: 'assets/fonts'})
 		 .pipe(gulp.dest(bases.build + 'fonts'));
-	};	
+	};
 };

@@ -3,5 +3,5 @@ module.exports = function(gulp, plugins){
 		gulp.src(['assets/js/**/*.js', 'assets/components/**/*.js'])
 		.pipe(plugins.concat('scripts.js'))
 		.pipe(gulp.dest('build/js'));
-	};	
+	};
 };

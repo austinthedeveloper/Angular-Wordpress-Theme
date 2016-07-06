@@ -10,7 +10,7 @@ single, page, list, github-issues, projects, project, blog, resume, about-the-si
 .main-content {
 	width: 95%;
 	max-width: 700px;
-	margin: auto;	
+	margin: auto;
 	padding-top: 10px;
 	padding-bottom: 25px;
 	font-size: 20px;
@@ -47,7 +47,7 @@ single, page, list, github-issues, projects, project, blog, resume, about-the-si
 			@include transition($base-transition);
 			&:hover {
 				background: darken($white, 3%);
-			}			
+			}
 		}
 		.post-image {
 			overflow: hidden;

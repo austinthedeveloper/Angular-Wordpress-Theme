@@ -15,11 +15,11 @@ module.exports = function(gulp, plugins){
 		.pipe(plugins.concat('angular.min.js'))
 		.pipe(plugins.uglify())
 		.pipe(gulp.dest('build/js'));
-		
+
 		gulp.src([
-			'node_modules/angular/angular.min.js.map', 
+			'node_modules/angular/angular.min.js.map',
 			'node_modules/angular-resource/angular-resource.min.js.map'
 		])
 		.pipe(gulp.dest('build/js'));
-	};	
+	};
 };
