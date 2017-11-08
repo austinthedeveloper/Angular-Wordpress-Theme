@@ -16,7 +16,8 @@ angular.module('stackOverflow', ['underscore'])
       var delay = $q.defer();
 
       $http.get('https://api.stackexchange.com/2.2/users/' + user, {params: params})
-        .success(function(data) {
+        .then(function(data) {
+          data = data.data;
           delay.resolve(data);
         });
 
@@ -27,7 +28,8 @@ angular.module('stackOverflow', ['underscore'])
       var delay = $q.defer();
 
       $http.get('https://api.stackexchange.com/2.2/users/' + user + '/comments', {params: params})
-        .success(function(data) {
+        .then(function(data) {
+          data = data.data;
           data = data.items;
           data = _.map(data, function(item) {
             var message = function(reply) {
@@ -64,7 +66,8 @@ angular.module('stackOverflow', ['underscore'])
       params.sort = "rank";
 
       $http.get('https://api.stackexchange.com/2.2/users/' + user + '/badges', {params: params})
-        .success(function(data) {
+        .then(function(data) {
+          data = data.data;
           delay.resolve(data);
         });
 

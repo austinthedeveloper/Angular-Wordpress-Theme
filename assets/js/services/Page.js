@@ -10,9 +10,9 @@ angular.module('wpAngularTheme')
 		id = id || '';
 
 		$http.get(url + id, {cache: true})
-		.success(function(res) {
-			defer.resolve(res);
-		}).error(function(err) {
+		.then(function(res) {
+			defer.resolve(res.data);
+		}, function(err) {
 			defer.reject(err);
 		});
 		return defer.promise;

@@ -13,9 +13,9 @@ angular.module('wpAngularTheme')
 		};
 
 		$http.get(url, {params: obj})
-		.success(function(res) {
-			defer.resolve(res[0]);
-		}).error(function(err) {
+		.then(function(res) {
+			defer.resolve(res.data[0]);
+		}, function(err) {
 			defer.reject(err);
 		});
 		return defer.promise;
@@ -30,9 +30,9 @@ angular.module('wpAngularTheme')
 				per_page: 100
 			}
 		})
-		.success(function(res) {
-			defer.resolve(res);
-		}).error(function(err) {
+		.then(function(res) {
+			defer.resolve(res.data);
+		}, function(err) {
 			defer.reject(err);
 		});
 		return defer.promise;

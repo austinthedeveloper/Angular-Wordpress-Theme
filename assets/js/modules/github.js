@@ -12,8 +12,10 @@ angular.module('github', ['underscore'])
     var defer = $q.defer(),
         url = vm.url + 'users/' + user + '/events';
 
-		$http.get(url).success(function(data){
+		$http.get(url)
+		.then(function(data){
 		  // type": "PushEvent"
+		  data = data.data;
 		  data = _.where(data, {type: 'PushEvent'});
 		  data = _.map(data, function(item) {
 		    var items = item.payload.size > 1 ? 'Items' : 'Item';
@@ -29,7 +31,7 @@ angular.module('github', ['underscore'])
 		    return obj;
 		  });
 			defer.resolve(data);
-		}).error(function(e){
+		}, function(e){
 			console.log(e);
 			defer.reject(e);
 		});
@@ -44,9 +46,11 @@ angular.module('github', ['underscore'])
         	state: 'all'
         };
 
-		$http.get(url, {params: params}).success(function(data){
+		$http.get(url, {params: params})
+		.then(function(data){
+			data = data.data;
 			defer.resolve(data);
-		}).error(function(e){
+		}, function(e){
 			console.log(e);
 			defer.reject(e);
 		});
