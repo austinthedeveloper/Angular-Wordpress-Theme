@@ -4,20 +4,27 @@ angular.module('wpAngularTheme')
 		'id': '@'
 	},
 	templateUrl: components + 'page/page.html',
-	controller: ['Page', '$stateParams', 'Processing', function(Page, $stateParams, Processing) {
-		var vm = this;
+	controller: ['Page', '$state', '$stateParams', 'Processing', function(Page, $state, $stateParams, Processing) {
+		var vm = this;		
 
-		vm.id = vm.id || $stateParams.slug || '';
+		this.$onInit = function() {
+	      vm.id = vm.id || $state.params.slug || $stateParams.slug || '';
+	      getPage();
+	    };
 
-		Processing.on();
-		Page.get(vm.id)
-		.then(function(res) {
-			vm.post = res;
-		}, function(err) {
-			console.log(err);
-		})
-		.then(function() {
-			Processing.off();
-		});
+	    function getPage() {
+	    	Processing.on();
+			Page.get(vm.id)
+			.then(function(res) {
+				vm.post = res;
+			}, function(err) {
+				console.log(err);
+			})
+			.then(function() {
+				Processing.off();
+			});
+	    }
+
+		
 	}]
 })

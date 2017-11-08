@@ -8,7 +8,7 @@
 		   <a href="http://stewart-portfolio.herokuapp.com/" target="_new">Angular 4 Version</a>
 	   </li>
 	   <li ng-repeat="(key, val) in $ctrl.menu">
-		   <a ui-sref="{{::val}}" ui-sref-active>{{::key}}</a>
+		   <a ui-sref="{{val}}">{{::key}}</a>
 	   </li>
    </ul>
 </md-content>

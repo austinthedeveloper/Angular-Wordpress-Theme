@@ -1,5 +1,8 @@
 angular.module('wpAngularTheme')
-.config(function($stateProvider,$urlRouterProvider){
+.config(function ($locationProvider) {
+    $locationProvider.hashPrefix('');
+})	
+.config(function($stateProvider, $urlRouterProvider){
 	$urlRouterProvider.otherwise('/');
 	$stateProvider
 		.state('main',{
